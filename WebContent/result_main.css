@@ -1,0 +1,9 @@
+body{    
+    background-color: rgba(240,240,240,.9);
+}
+
+.result{
+    padding-left: 10%;
+    padding-right: 10%;
+    height: 38vh;
+}

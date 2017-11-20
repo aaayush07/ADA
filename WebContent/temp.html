@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>ADA || Home page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <!--google font & header css -->
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+
+    <link rel="stylesheet" href="header.css" type="text/css">
+
+    <!-- main part css -->
+    <link rel="stylesheet" href="main.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+
+    <!-- footer part css -->
+    <link rel="stylesheet" href="footer.css" type="text/css">
+
+</head>
+
+<body>
+
+    <div class="container-fluid header">
+        <div class="row">
+            <div class="col-xs-7">
+                <a href="#" class="ada" id="Ada" title="Assignment Differential Analyser">Ada<span class="full">: Assignment differential analyser</span></a>
+            </div>
+            <div class="col-xs-3"><a href="#" class="about-us" alt="Click to know more about this product"><span class="about-us">About us</span></a></div>
+            <div class="col-xs-2"><a href="#" class="more">More</a></div>
+        </div>
+    </div>
+
+    <div class="container-fluid main">
+        <div class="row">
+            <div class="col-md-6 file1">
+                <form action="FileReader1" method="post" id="submit1" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-sm-12 text-center upload"><span class="span-upload">Upload First Document</span></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 file">
+                            <div class="file-upload">
+                                <input type="file" name="doc1" id="doc1" accept="text/plain" onchange="myFile1(event)">
+                                <i class="fa fa-arrow-up" id="i1"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 text-center upload"><span class="span-upload" id="doc1Name">No file chosen</span></div>
+                    </div>
+                    <input type="submit" id="" style="visibility: hidden">
+                </form>
+            </div>
+            <div class="col-md-6 file2">
+                <form action="FileReader2" method="post" id="submit2" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-sm-12 text-center upload"><span class="span-upload">Upload Second Document</span></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 file">
+                            <div class="file-upload">
+                                <input type="file" id="doc2" name="doc2" accept="text/plain" onchange="myFile2()">
+                                <i class="fa fa-arrow-up" id="i2"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 text-center upload"><span class="span-upload" id="doc2Name">No file chosen</span></div>
+                    </div>
+                    <input type="submit" id="" style="visibility: hidden">
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 text-center submit">
+                <input type="submit" class="btn-lg" onclick="submitFile()">
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid" id="foot">
+        <div class="row footer">
+            <div class="col-xs-6 text-center first">Developed by this <a href="#" title="see their profile">Guy </a>&amp; that <a href="#" title="See their profile">Guy</a></div>
+            <div class="col-xs-3"><a href="#feedback">Feedback</a></div>
+            <div class="col-xs-3"><a href="#report">Report</a></div>
+        </div>
+        <div class="row footer">
+            <div class="col-xs-12 text-center second">All right reserved. &copy;
+                <script>
+                    var x = new Date().getFullYear();
+                    document.write(x);
+
+                </script>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function myFile1(event) {
+            var x = document.getElementById("doc1").files[0].name;
+            var l = x.length;
+            if (x[l - 1] === 't' && x[l - 2] == 'x' && x[l - 3] == 't') {
+                document.getElementById("doc1Name").innerHTML = x;
+                document.getElementById("i1").setAttribute("class", "glyphicon glyphicon-ok");
+            } else {
+                document.getElementById("doc1Name").innerHTML = 'Choose a text file';
+                document.getElementById("i1").setAttribute("class", "fa fa-arrow-up");
+                var file = document.getElementById("doc1");
+                file.value = file.defaultValue;
+            }
+        }
+
+        function myFile2() {
+            var x = document.getElementById("doc2").files[0].name;
+            var l = x.length;
+            if (x[l - 1] === 't' && x[l - 2] == 'x' && x[l - 3] == 't') {
+                document.getElementById("doc2Name").innerHTML = x;
+                document.getElementById("i2").setAttribute("class", "glyphicon glyphicon-ok");
+            } else {
+                document.getElementById("doc2Name").innerHTML = 'Choose a text file';
+                document.getElementById("i2").setAttribute("class", "fa fa-arrow-up");
+                var file = document.getElementById("doc2");
+                file.value = file.defaultValue;
+            }
+        }
+        
+        function submitFile(){
+            var submit1 = document.getElementById("submit1");
+            var submit2 = document.getElementById("submit2");
+            submit1.submit();
+            submit2.submit();
+        }
+
+    </script>
+
+</body>
+
+</html>

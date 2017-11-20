@@ -1,0 +1,41 @@
+.footer {
+    background-image: url("footer.png");
+    color: #f2fef3;
+    font-size: 14px;
+}
+
+.footer a,
+.footer a:active,
+.footer a:visited,
+.footer a:link {
+    color: #99d4ff;
+}
+
+.footer a:hover,
+.footer a:focus {
+    text-decoration: none;
+    color: #07c;
+    border-bottom: 1.5px solid yellow;
+}
+
+@media only screen and (max-width: 481px) {
+    .footer .col-xs-3 {
+        line-height: 3;
+    }
+}
+
+@media only screen and (min-width:992px) {
+    @media only screen and (min-height: 645px) {
+        #foot {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .footer {
+        font-size: 16px;
+    }
+}

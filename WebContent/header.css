@@ -1,0 +1,59 @@
+body{
+    background-color: rgba(240,240,240,.9);
+    width: 100%;
+}
+.header{
+    top: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 15vh;
+    background-image:url("header%20-%20Copy.png");
+    color: #fff;
+    border-bottom:2px solid #0f0f0f;
+    line-height: 15vh;
+}
+
+.header a:active,.header a:visited,.header a:link{
+    padding-left: 20%;
+    color: #fff;
+    font-size: 12px;
+    text-decoration: none;
+}
+.header a:hover,.header a:focus{
+    text-decoration: none;
+}
+.header .ada:active,.header .ada:visited, .header .ada:link{
+    font-family: 'Lobster', cursive;
+    font-weight: 400;
+    font-size: 50px;
+}
+.full{
+    display: none;
+}
+
+/* for very small screen */
+@media only screen and (max-width: 360px){
+    .about-us{
+        font-size:9px;
+    }
+    
+}
+/* for large screen */
+
+@media only screen and (min-width: 768px) {
+    .header{
+        overflow: visible;
+        margin-right: 10%;
+    }
+    .header a:active,.header a:visited,.header a:link{
+        font-size: 22px;
+    }
+    .header .ada:active,.header .ada:visited, .header .ada:link{
+        font-size: 60px;
+    }
+    .full{
+        display:inline;
+        font-size: 15px;
+        line-height: 12vh;
+    }
+}
